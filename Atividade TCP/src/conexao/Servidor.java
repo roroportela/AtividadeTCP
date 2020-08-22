@@ -21,8 +21,8 @@ public class Servidor {
 		System.out.println("Porta 3214");
 
 		Socket cliente = server.conexao();
-//		Conex„o com o cliente
-		 System.out.println("Nova conex„o com o cliente "+cliente.getInetAddress().getHostAddress());
+//		Conex√£o com o cliente
+		 System.out.println("Nova conex√£o com o cliente "+cliente.getInetAddress().getHostAddress());
 
 		Scanner sc = new Scanner(cliente.getInputStream());
 		while (sc.hasNext()) {
@@ -31,7 +31,6 @@ public class Servidor {
 		sc.close();
 		serverSocket.close();
 		cliente.close();
-//		https://www.caelum.com.br/apostila-java-orientacao-objetos/apendice-sockets#cliente
 	}
 
 }
