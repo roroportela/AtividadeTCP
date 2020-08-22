@@ -17,20 +17,21 @@ public class Servidor {
 	public static void main(String[] args) throws IOException {
 		Servidor server = new Servidor();
 
-		serverSocket = new ServerSocket(7413);
-		System.out.println("Porta 3214");
+		serverSocket = new ServerSocket(7412);
+		System.out.println("Porta 7412");
 
-		Socket cliente = server.conexao();
+		while (true) {
+			Socket cliente = server.conexao();
 //		Conexão com o cliente
-		 System.out.println("Nova conexão com o cliente "+cliente.getInetAddress().getHostAddress());
+			System.out.println("Nova conexão com o cliente " + cliente.getInetAddress().getHostAddress());
 
-		Scanner sc = new Scanner(cliente.getInputStream());
-		while (sc.hasNext()) {
-			System.out.println(sc.nextLine());
+			Scanner sc = new Scanner(cliente.getInputStream());
+			while (sc.hasNext()) {
+				System.out.println(sc.nextLine());
+			}
+			sc.close();
 		}
-		sc.close();
-		serverSocket.close();
-		cliente.close();
+//		serverSocket.close();
+//		cliente.close();
 	}
-
 }
