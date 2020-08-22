@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Cliente {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		Socket cliente = new Socket("127.0.0.1", 7413);
+		Socket cliente = new Socket("0.tcp.ngrok.io", 18770);
 		System.out.println("Cliente Conectado");
 
 		Scanner sc = new Scanner(System.in);
